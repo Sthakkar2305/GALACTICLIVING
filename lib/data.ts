@@ -9,6 +9,13 @@ export const amenities = [
   "Study lounges"
 ];
 
+export const occupancyPricing = [
+  { name: "2X Double Occupancy", price: 22700, features: ["Shared premium room", "AC comfort", "Attached washroom"] },
+  { name: "3X Triple Occupancy", price: 16700, features: ["Smart shared room", "Study-friendly setup", "Daily housekeeping"] },
+  { name: "4X Quadruple Occupancy", price: 14700, features: ["Value living", "Meals included", "Reliable Wi-Fi"] },
+  { name: "5X Quintuple Occupancy", price: 12700, features: ["Budget-friendly plan", "Clean common spaces", "Security access"] }
+];
+
 export const properties = [
   {
     id: "galactic-alpha",
@@ -17,9 +24,9 @@ export const properties = [
     city: "Ahmedabad",
     type: "Premium PG",
     gender: "Unisex",
-    price: 14999,
+    price: 12700,
     rating: 4.9,
-    occupancy: ["Single", "Double", "Triple"],
+    occupancy: ["2X Double", "3X Triple", "4X Quad", "5X Quint"],
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
     gallery: [
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
@@ -29,11 +36,7 @@ export const properties = [
     description:
       "A flagship luxury co-living address with smart access, bright rooms, curated meals, and a polished resident experience.",
     nearby: ["CEPT University", "HL College", "Vijay Cross Road", "CG Road"],
-    roomTypes: [
-      { name: "Single Suite", price: 24999, features: ["Private room", "Work desk", "Attached bath"] },
-      { name: "Double Comfort", price: 17999, features: ["Shared room", "Balcony", "Storage"] },
-      { name: "Triple Smart", price: 14999, features: ["Value plan", "AC", "Study corner"] }
-    ]
+    roomTypes: occupancyPricing
   },
   {
     id: "galactic-orion",
@@ -42,9 +45,9 @@ export const properties = [
     city: "Ahmedabad",
     type: "Student Living",
     gender: "Male",
-    price: 11999,
+    price: 12700,
     rating: 4.8,
-    occupancy: ["Double", "Triple", "Quad"],
+    occupancy: ["2X Double", "3X Triple", "4X Quad", "5X Quint"],
     image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=85",
     gallery: [
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=85",
@@ -52,10 +55,7 @@ export const properties = [
     ],
     description: "A calm, high-service home for students who want predictable meals, fast WiFi, and excellent commute access.",
     nearby: ["Nirma University", "SG Highway", "Gota Circle"],
-    roomTypes: [
-      { name: "Double Plus", price: 14999, features: ["AC room", "Meals", "Laundry"] },
-      { name: "Triple Essential", price: 11999, features: ["Storage", "WiFi", "Housekeeping"] }
-    ]
+    roomTypes: occupancyPricing
   },
   {
     id: "galactic-nova",
@@ -64,9 +64,9 @@ export const properties = [
     city: "Ahmedabad",
     type: "Working Pro",
     gender: "Female",
-    price: 16499,
+    price: 12700,
     rating: 4.9,
-    occupancy: ["Single", "Double"],
+    occupancy: ["2X Double", "3X Triple", "4X Quad", "5X Quint"],
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
     gallery: [
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
@@ -74,10 +74,7 @@ export const properties = [
     ],
     description: "Elegant women-first PG living near cafes, offices, and universities with premium security and concierge care.",
     nearby: ["IIM Ahmedabad", "Alpha One Mall", "Drive-In Road"],
-    roomTypes: [
-      { name: "Single Elite", price: 26999, features: ["Private bath", "Premium meals", "Smart lock"] },
-      { name: "Double Studio", price: 16499, features: ["Bright room", "AC", "Study desk"] }
-    ]
+    roomTypes: occupancyPricing
   }
 ];
 

@@ -31,7 +31,7 @@ export function Footer() {
           <h3 className="font-bold">Contact</h3>
           <div className="mt-4 grid gap-3 text-white/62">
             <span className="flex gap-2"><Phone size={17} /> +91 99999 99999</span>
-            <span className="flex gap-2"><Mail size={17} /> hello@galacticliving.com</span>
+            <span className="flex gap-2"><Mail size={17} /> galacticstay@gmail.com</span>
             <span className="flex gap-2"><MapPin size={17} /> Ahmedabad, Gujarat</span>
           </div>
         </div>

@@ -1,8 +1,6 @@
+.next
+.next-local
+node_modules
 .env
-.env.example
-node_modules/
-dist/
-coverage/
-logs/
-*.log
-*.tmp
+.env.local
+npm-debug.log*

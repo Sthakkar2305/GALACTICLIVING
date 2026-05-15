@@ -117,6 +117,72 @@ export default function HomePage() {
       </section>
 
       <section className="container-lux py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <FadeUp>
+            <div className="sticky top-28 rounded-[36px] bg-galactic-black p-7 text-white shadow-luxury md:p-9">
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-galactic-red">Best PG in Ahmedabad</p>
+              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">What you need to know before choosing a PG.</h2>
+              <p className="mt-5 text-white/64">
+                Ahmedabad has become a popular city for students and working professionals. Finding a PG is easy, but finding a good one needs a closer look at real daily comfort, not just photos or rent.
+              </p>
+              <div className="mt-7 rounded-[26px] border border-white/10 bg-white/[0.06] p-5">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/46">Final thought</p>
+                <p className="mt-3 text-white/76">
+                  A good PG should make your life simpler. If you constantly deal with food, cleaning, or security problems, it is not worth it, no matter how cheap or fancy it looks.
+                </p>
+              </div>
+            </div>
+          </FadeUp>
+          
+          <div className="grid gap-5">
+            <FadeUp>
+              <div className="rounded-[30px] border border-black/8 bg-white p-6 shadow-[0_18px_60px_rgba(0,0,0,0.07)] md:p-7">
+                <h3 className="text-2xl font-black">Why Galactic Living is different</h3>
+                <p className="mt-3 leading-7 text-black/58">
+                  Most PGs just give you a room and leave the rest to you. Galactic Living makes the whole experience easier, cleaner, safer, and more structured than typical inconsistent PG setups.
+                </p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {["24/7 security with CCTV and controlled access", "Clean spaces with regular housekeeping", "Daily meals that are simple and consistent", "Reliable Wi-Fi for work or study", "Common areas to relax or hang out"].map((item) => (
+                    <div key={item} className="rounded-2xl bg-galactic-mist p-4 text-sm font-bold text-black/74">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeUp>
+            <div className="grid gap-5 md:grid-cols-2">
+              <FadeUp>
+                <div className="h-full rounded-[30px] bg-galactic-mist p-6 md:p-7">
+                  <h3 className="text-2xl font-black">What to check before choosing</h3>
+                  <div className="mt-5 grid gap-3">
+                    {["What is included in the cost: food, Wi-Fi, cleaning", "Furniture, ventilation, and everyday comfort", "Food quality and hygiene", "Security measures", "Distance from college or workplace"].map((item) => (
+                      <div key={item} className="flex gap-3 rounded-2xl bg-white p-4 text-sm font-bold text-black/72">
+                        <span className="mt-1 size-2 shrink-0 rounded-full bg-galactic-red" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeUp>
+              <FadeUp delay={0.08}>
+                <div className="h-full rounded-[30px] bg-[linear-gradient(135deg,#111,#2a0205)] p-6 text-white md:p-7">
+                  <h3 className="text-2xl font-black">What you typically get</h3>
+                  <div className="mt-5 grid gap-3">
+                    {["Furnished rooms with AC and attached washrooms", "Meals and clean drinking water", "Wi-Fi and power backup", "Housekeeping and laundry", "Security systems", "Lounges and activity areas"].map((item) => (
+                      <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 text-sm font-bold text-white/78">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeUp>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+
+      <section className="container-lux py-20">
         <div className="mb-10">
           <p className="text-sm font-black uppercase tracking-[0.22em] text-galactic-red">Resident voices</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Move-in stories with less drama.</h2>
