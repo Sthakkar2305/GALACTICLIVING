@@ -9,11 +9,27 @@ export const amenities = [
   "Study lounges"
 ];
 
+export const contact = {
+  email: "galacticstay@gmail.com",
+  phone: "9265964547",
+  instagram: "https://www.instagram.com/galacticliving.in?igsh=ZDd3cm92ZjlsbDN2"
+};
+
 export const occupancyPricing = [
-  { name: "2X Double Occupancy", price: 22700, features: ["Shared premium room", "AC comfort", "Attached washroom"] },
-  { name: "3X Triple Occupancy", price: 16700, features: ["Smart shared room", "Study-friendly setup", "Daily housekeeping"] },
-  { name: "4X Quadruple Occupancy", price: 14700, features: ["Value living", "Meals included", "Reliable Wi-Fi"] },
-  { name: "5X Quintuple Occupancy", price: 12700, features: ["Budget-friendly plan", "Clean common spaces", "Security access"] }
+  { name: "2X Double Occupancy", beds: "x 2", price: 22700, features: ["Shared premium room", "AC comfort", "Attached washroom"] },
+  { name: "3X Triple Occupancy", beds: "x 3", price: 16700, features: ["Smart shared room", "Study-friendly setup", "Daily housekeeping"] },
+  { name: "4X Quadruple Occupancy", beds: "x 4", price: 14700, features: ["Value living", "Meals included", "Reliable Wi-Fi"] },
+  { name: "5X Quintuple Occupancy", beds: "x 5", price: 12700, features: ["Budget-friendly plan", "Clean common spaces", "Security access"] }
+];
+
+export const propertyAmenities = ["Attached washrooms", "Air Conditioning", "Spacious Cupboards"];
+
+export const propertyServices = [
+  "Hot & Delicious Meals",
+  "High Speed WIFI",
+  "Laundry Service",
+  "Professional Housekeeping",
+  "24*7 Security Surveillance"
 ];
 
 export const properties = [

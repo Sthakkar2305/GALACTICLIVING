@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { contact } from "@/lib/data";
 
 export function Footer() {
   return (
@@ -11,11 +12,12 @@ export function Footer() {
             Premium PG and hostel living designed for students, creators, and working professionals who want comfort without chaos.
           </p>
           <div className="mt-6 flex gap-3">
-            {[Instagram, Linkedin, Mail].map((Icon, index) => (
-              <span key={index} className="grid size-11 place-items-center rounded-full bg-white/8 text-white/80">
-                <Icon size={18} />
-              </span>
-            ))}
+            <a href={contact.instagram} target="_blank" rel="noreferrer" className="grid size-11 place-items-center rounded-full bg-white/8 text-white/80 transition hover:bg-galactic-red hover:text-white" aria-label="Galactic Living Instagram">
+              <Instagram size={18} />
+            </a>
+            <a href={`mailto:${contact.email}`} className="grid size-11 place-items-center rounded-full bg-white/8 text-white/80 transition hover:bg-galactic-red hover:text-white" aria-label="Email Galactic Living">
+              <Mail size={18} />
+            </a>
           </div>
         </div>
         <div>
@@ -23,15 +25,15 @@ export function Footer() {
           <div className="mt-4 grid gap-3 text-white/62">
             <Link href="/properties">Properties</Link>
             <Link href="/gallery">Gallery</Link>
+            <Link href="/house-rules">House Rules</Link>
             <Link href="/about">About</Link>
-            <Link href="/admin/login">Admin</Link>
           </div>
         </div>
         <div>
           <h3 className="font-bold">Contact</h3>
           <div className="mt-4 grid gap-3 text-white/62">
-            <span className="flex gap-2"><Phone size={17} /> +91 99999 99999</span>
-            <span className="flex gap-2"><Mail size={17} /> galacticstay@gmail.com</span>
+            <a href={`tel:+91${contact.phone}`} className="flex gap-2"><Phone size={17} /> +91 {contact.phone}</a>
+            <a href={`mailto:${contact.email}`} className="flex gap-2"><Mail size={17} /> {contact.email}</a>
             <span className="flex gap-2"><MapPin size={17} /> Ahmedabad, Gujarat</span>
           </div>
         </div>
@@ -44,7 +46,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-sm text-white/46">
-        © 2026 Galactic Living. All rights reserved.
+        (c) 2026 Galactic Living. All rights reserved.
       </div>
     </footer>
   );

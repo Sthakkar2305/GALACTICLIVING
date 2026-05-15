@@ -1,7 +1,8 @@
 import { MessageCircle } from "lucide-react";
+import { contact } from "@/lib/data";
 
 export function WhatsAppButton() {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919999999999";
+  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? `91${contact.phone}`;
   return (
     <>
       <a

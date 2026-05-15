@@ -1,5 +1,7 @@
 
+.next
 .next-local
+.next-runtime
 node_modules
 .env
 .env.local

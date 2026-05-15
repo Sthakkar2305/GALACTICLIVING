@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PageTransition } from "@/components/ui/Motion";
+import { contact } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -21,8 +22,8 @@ export default function ContactPage() {
         <div className="rounded-[32px] bg-galactic-mist p-6 md:p-8">
           <h2 className="text-3xl font-black">Contact support</h2>
           <div className="mt-7 grid gap-4">
-            <a href="tel:+919999999999" className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold"><Phone className="text-galactic-red" /> +91 99999 99999</a>
-            <a href="mailto:galacticstay@gmail.com" className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold"><Mail className="text-galactic-red" /> galacticstay@gmail.com</a>
+            <a href={`tel:+91${contact.phone}`} className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold"><Phone className="text-galactic-red" /> +91 {contact.phone}</a>
+            <a href={`mailto:${contact.email}`} className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold"><Mail className="text-galactic-red" /> {contact.email}</a>
             <div className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold"><MapPin className="text-galactic-red" /> Ahmedabad, Gujarat</div>
           </div>
           <div className="mt-6 aspect-[16/10] rounded-[24px] bg-[linear-gradient(135deg,#111,#E50914)] p-6 text-white">

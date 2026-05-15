@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
+import { contact } from "@/lib/data";
 
 const links = [
   ["Home", "/"],
   ["Properties", "/properties"],
   ["Gallery", "/gallery"],
+  ["House Rules", "/house-rules"],
   ["About", "/about"],
   ["Contact", "/contact"]
 ];
@@ -30,7 +32,7 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
-          <a href="tel:+919999999999" className="rounded-full border border-black/10 p-3 transition hover:border-galactic-red hover:text-galactic-red" aria-label="Call Galactic Living">
+          <a href={`tel:+91${contact.phone}`} className="rounded-full border border-black/10 p-3 transition hover:border-galactic-red hover:text-galactic-red" aria-label="Call Galactic Living">
             <Phone size={18} />
           </a>
           <Link href="/contact" className="rounded-full bg-galactic-red px-5 py-3 text-sm font-bold text-white shadow-redglow transition hover:-translate-y-0.5 hover:bg-black">

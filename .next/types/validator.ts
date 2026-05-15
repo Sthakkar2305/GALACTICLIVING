@@ -92,6 +92,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/house-rules/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/house-rules">> = Specific
+  const handler = {} as typeof import("../../app/house-rules/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
@@ -105,15 +114,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/properties/[slug]">> = Specific
   const handler = {} as typeof import("../../app/properties/[slug]/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../app/properties/galactic-alpha/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/properties/galactic-alpha">> = Specific
-  const handler = {} as typeof import("../../app/properties/galactic-alpha/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
