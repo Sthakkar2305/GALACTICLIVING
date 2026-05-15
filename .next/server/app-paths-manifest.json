@@ -1,0 +1,21 @@
+{
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/gallery/[id]/route": "app/api/gallery/[id]/route.js",
+  "/api/gallery/route": "app/api/gallery/route.js",
+  "/api/properties/route": "app/api/properties/route.js",
+  "/api/inquiries/route": "app/api/inquiries/route.js",
+  "/api/properties/[id]/route": "app/api/properties/[id]/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/icon.svg/route": "app/icon.svg/route.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/login/page": "app/admin/login/page.js",
+  "/page": "app/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/properties/[slug]/page": "app/properties/[slug]/page.js",
+  "/properties/galactic-alpha/page": "app/properties/galactic-alpha/page.js",
+  "/properties/page": "app/properties/page.js"
+}
