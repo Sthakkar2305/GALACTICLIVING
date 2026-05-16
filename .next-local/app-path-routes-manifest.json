@@ -1,0 +1,21 @@
+{
+  "/page": "/",
+  "/api/auth/login/route": "/api/auth/login",
+  "/_not-found/page": "/_not-found",
+  "/api/gallery/[id]/route": "/api/gallery/[id]",
+  "/api/gallery/route": "/api/gallery",
+  "/api/inquiries/route": "/api/inquiries",
+  "/api/properties/[id]/route": "/api/properties/[id]",
+  "/api/properties/route": "/api/properties",
+  "/robots.txt/route": "/robots.txt",
+  "/icon.svg/route": "/icon.svg",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/admin/login/page": "/admin/login",
+  "/admin/page": "/admin",
+  "/about/page": "/about",
+  "/gallery/page": "/gallery",
+  "/contact/page": "/contact",
+  "/properties/[slug]/page": "/properties/[slug]",
+  "/house-rules/page": "/house-rules",
+  "/properties/page": "/properties"
+}

@@ -1,8 +1,5 @@
-
-.next
-.next-local
-.next-runtime
-node_modules
+modules/
+node_modules/
 .env
 .env.local
 npm-debug.log*
