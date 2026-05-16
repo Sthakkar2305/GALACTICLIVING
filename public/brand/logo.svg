@@ -1,7 +1,6 @@
-<svg width="220" height="54" viewBox="0 0 220 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="54" height="54" rx="16" fill="#0B0B0B"/>
-  <path d="M27 9L32.5 22.5L47 27L32.5 31.5L27 45L21.5 31.5L7 27L21.5 22.5L27 9Z" fill="#E50914"/>
-  <path d="M27 18L30 25L37 27L30 29L27 36L24 29L17 27L24 25L27 18Z" fill="white"/>
-  <text x="68" y="23" fill="#0B0B0B" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="18">GALACTIC</text>
-  <text x="68" y="42" fill="#E50914" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="16">LIVING</text>
+<svg width="250" height="60" viewBox="0 0 250 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 28 C 12 18, 20 12, 30 12 H 42 L 36 22 H 30 C 26 22, 22 25, 22 28 C 22 32, 26 35, 30 35 H 32 V 28 H 42 V 45 C 38 48, 33 49, 28 49 C 18 49, 12 40, 12 28 Z" fill="#E50914"/>
+  <rect x="55" y="10" width="3" height="40" fill="#E50914" />
+  <text x="65" y="28" fill="#E50914" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="22" letter-spacing="1">GALACTIC</text>
+  <text x="65" y="48" fill="#E50914" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="22" letter-spacing="1">LIVING</text>
 </svg>

@@ -76,17 +76,17 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
 
       <section className="container-lux grid gap-8 pb-20 lg:grid-cols-[1fr_380px]">
         <div className="grid gap-8">
-          <div>
+          <div id="details" className="scroll-mt-28">
             <h2 className="text-3xl font-black">About this home</h2>
             <p className="mt-4 text-lg leading-8 text-black/58">{property.description}</p>
           </div>
 
-          <div className="overflow-hidden rounded-[30px] border border-black/8 bg-white shadow-luxury">
+          <div id="occupancy" className="scroll-mt-28 overflow-hidden rounded-[30px] border border-black/8 bg-white shadow-luxury">
             <div className="border-b border-black/8 bg-galactic-mist/70 px-5 pt-5">
               <div className="grid grid-cols-3 text-center text-sm font-black text-black/54">
-                <span className="border-b-2 border-galactic-red pb-4 text-galactic-red">Occupancy</span>
-                <span className="pb-4">Amenities</span>
-                <span className="pb-4">Details</span>
+                <a href="#occupancy" className="border-b-2 border-galactic-red pb-4 text-galactic-red transition hover:text-black">Occupancy</a>
+                <a href="#amenities" className="pb-4 transition hover:text-galactic-red">Amenities</a>
+                <a href="#details" className="pb-4 transition hover:text-galactic-red">Details</a>
               </div>
             </div>
             <div className="p-5 md:p-7">
@@ -97,25 +97,25 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
                 </div>
                 <p className="text-sm font-semibold text-black/46">*Starting price inclusive of standard services.</p>
               </div>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
                 {property.roomTypes.map((room) => (
-                  <div key={room.name} className="group rounded-[24px] border border-galactic-red/15 bg-white p-5 shadow-[0_14px_45px_rgba(229,9,20,0.08)] transition hover:-translate-y-1 hover:border-galactic-red hover:shadow-redglow">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="grid size-12 place-items-center rounded-2xl bg-galactic-red/10 text-galactic-red">
-                        <BedDouble size={22} />
+                  <div key={room.name} className="group rounded-2xl border border-galactic-red/15 bg-white p-3 text-center shadow-[0_14px_45px_rgba(229,9,20,0.08)] transition hover:-translate-y-1 hover:border-galactic-red hover:shadow-redglow">
+                    <div className="mx-auto flex w-max items-center gap-1.5 rounded-full bg-galactic-red/10 px-2 py-1 text-galactic-red">
+                      <div className="grid size-6 place-items-center rounded-full bg-white text-galactic-red shadow-sm">
+                        <BedDouble size={14} />
                       </div>
-                      <span className="rounded-full bg-galactic-mist px-3 py-1 text-xs font-black text-galactic-red">{room.beds}</span>
+                      <span className="text-xs font-black">{room.beds}</span>
                     </div>
-                    <h3 className="mt-4 text-xl font-black uppercase tracking-tight">{room.name}</h3>
-                    <p className="mt-2 text-sm leading-6 text-black/55">{room.features.join(" / ")}</p>
-                    <p className="mt-4 text-3xl font-black text-galactic-red">Rs. {room.price.toLocaleString("en-IN")}<span className="text-sm text-black/42">/mo*</span></p>
+                    <h3 className="mt-2 text-[11px] font-black uppercase leading-tight tracking-tight sm:text-xs">{room.name.replace(/^\dX\s/, "")}</h3>
+                    <p className="mt-1.5 min-h-[32px] text-[10px] leading-4 text-black/52 sm:min-h-[36px] sm:text-xs">{room.features.slice(0, 2).join(" / ")}</p>
+                    <p className="mt-2 text-sm font-black text-galactic-red sm:text-base">Rs. {room.price.toLocaleString("en-IN")}<span className="text-[10px] text-black/42">/mo*</span></p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div id="amenities" className="scroll-mt-28 grid gap-5 md:grid-cols-2">
             <div className="rounded-[30px] bg-galactic-mist p-6">
               <h2 className="text-3xl font-black">Amenities</h2>
               <div className="mt-5 flex flex-wrap gap-3">

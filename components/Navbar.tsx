@@ -19,7 +19,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/82 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white shadow-sm">
       <div className="container-lux flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="Galactic Living home">
           <Image src="/brand/logo.svg" width={176} height={44} alt="Galactic Living" priority />
