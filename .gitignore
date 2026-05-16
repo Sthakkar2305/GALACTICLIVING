@@ -3,3 +3,9 @@ node_modules/
 .env
 .env.local
 npm-debug.log*
+.next/
+.next-local/
+.next-run/
+.next-runtime/
+out/
+build/
