@@ -22,7 +22,11 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white shadow-sm">
       <div className="container-lux flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="Galactic Living home">
-          <Image src="/brand/logo.svg" width={176} height={44} alt="Galactic Living" priority />
+          <Image src="/brand/uploaded-logo.png" width={44} height={44} alt="Galactic Living" priority className="size-11 object-contain" />
+          <span className="leading-none">
+            <span className="block text-lg font-black tracking-tight text-black">GALACTIC</span>
+            <span className="block text-sm font-black tracking-tight text-galactic-red">LIVING</span>
+          </span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-black/70 lg:flex">
           {links.map(([label, href]) => (

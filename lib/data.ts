@@ -16,13 +16,13 @@ export const contact = {
 };
 
 export const occupancyPricing = [
-  { name: "2X Double Occupancy", beds: "x 2", price: 22700, features: ["Shared premium room", "AC comfort", "Attached washroom"] },
-  { name: "3X Triple Occupancy", beds: "x 3", price: 16700, features: ["Smart shared room", "Study-friendly setup", "Daily housekeeping"] },
-  { name: "4X Quadruple Occupancy", beds: "x 4", price: 14700, features: ["Value living", "Meals included", "Reliable Wi-Fi"] },
-  { name: "5X Quintuple Occupancy", beds: "x 5", price: 12700, features: ["Budget-friendly plan", "Clean common spaces", "Security access"] }
+  { name: "2X Double Occupancy", beds: "x 2", price: 22700 },
+  { name: "3X Triple Occupancy", beds: "x 3", price: 16700 },
+  { name: "4X Quadruple Occupancy", beds: "x 4", price: 14700 },
+  { name: "5X Quintuple Occupancy", beds: "x 5", price: 12700 }
 ];
 
-export const propertyAmenities = ["Attached washrooms", "Air Conditioning", "Spacious Cupboards"];
+export const propertyAmenities = ["Air Conditioning", "Attached Washroom", "Spacious Cupboard"];
 
 export const propertyServices = [
   "Hot & Delicious Meals",

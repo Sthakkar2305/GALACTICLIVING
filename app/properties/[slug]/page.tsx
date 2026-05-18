@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AirVent, BedDouble, ChefHat, DoorOpen, MapPin, Shirt, ShieldCheck, Sparkles, Star, WashingMachine, Wifi } from "lucide-react";
+import { AirVent, Archive, Bath, BedDouble, Bolt, ChefHat, MapPin, ShieldCheck, Sparkles, Star, WashingMachine, Wifi } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 import { properties, propertyAmenities, propertyServices } from "@/lib/data";
 
@@ -28,8 +28,8 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
   const property = properties.find((item) => item.id === slug);
   if (!property) notFound();
 
-  const amenityIcons = [DoorOpen, AirVent, Sparkles];
-  const serviceIcons = [ChefHat, Wifi, WashingMachine, Shirt, ShieldCheck];
+  const amenityIcons = [AirVent, Bath, Archive];
+  const serviceIcons = [ChefHat, Wifi, WashingMachine, Sparkles, ShieldCheck];
   const sliderImages = Array.from({ length: 3 }, (_, index) => property.gallery[index % property.gallery.length]);
 
   return (
@@ -41,20 +41,12 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
             <span>/</span>
             <span>{property.name}</span>
           </div>
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
-            <div>
+          <div className="max-w-4xl">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 font-bold">
                 <Star size={16} fill="currentColor" className="text-galactic-red" /> {property.rating} resident rating
               </div>
               <h1 className="text-5xl font-black tracking-tight md:text-7xl">{property.name}</h1>
               <p className="mt-4 flex items-center gap-2 text-white/62"><MapPin size={18} /> {property.location}</p>
-            </div>
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.06] p-5">
-              <p className="text-sm uppercase tracking-[0.18em] text-white/46">Starts from</p>
-              <p className="mt-1 text-4xl font-black">Rs. {property.price.toLocaleString("en-IN")} <span className="text-base text-white/48">/mo*</span></p>
-              <p className="mt-2 text-xs leading-5 text-white/46">Final prices may vary based on room occupancy, selected services, and availability.</p>
-              <Link href="#booking" className="mt-5 flex h-[52px] items-center justify-center rounded-2xl bg-galactic-red font-bold text-white">Book Visit</Link>
-            </div>
           </div>
         </div>
       </section>
@@ -107,7 +99,7 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
                       <span className="text-xs font-black">{room.beds}</span>
                     </div>
                     <h3 className="mt-2 text-[11px] font-black uppercase leading-tight tracking-tight sm:text-xs">{room.name.replace(/^\dX\s/, "")}</h3>
-                    <p className="mt-1.5 min-h-[32px] text-[10px] leading-4 text-black/52 sm:min-h-[36px] sm:text-xs">{room.features.slice(0, 2).join(" / ")}</p>
+                    {/* <p className="mt-1.5 min-h-[32px] text-[10px] leading-4 text-black/52 sm:min-h-[36px] sm:text-xs">{room.features.slice(0, 2).join(" / ")}</p> */}
                     <p className="mt-2 text-sm font-black text-galactic-red sm:text-base">Rs. {room.price.toLocaleString("en-IN")}<span className="text-[10px] text-black/42">/mo*</span></p>
                   </div>
                 ))}
@@ -115,43 +107,44 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
             </div>
           </div>
 
-          <div id="amenities" className="scroll-mt-28 grid gap-5 md:grid-cols-2">
-            <div className="rounded-[30px] bg-galactic-mist p-6">
+          <div id="amenities" className="scroll-mt-28 grid gap-8">
+            <div>
               <h2 className="text-3xl font-black">Amenities</h2>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-5 rounded-[28px] border border-black/15 bg-white p-5 md:p-6">
+                <div className="grid gap-4 sm:grid-cols-2">
                 {propertyAmenities.map((item, index) => {
                   const Icon = amenityIcons[index] ?? Sparkles;
                   return (
-                    <div key={item} className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-3 text-sm font-bold text-black/72">
-                      <Icon size={18} className="text-galactic-red" /> {item}
+                    <div key={item} className="flex min-h-[64px] items-center gap-4 rounded-2xl border border-black/20 bg-white px-5 py-4 text-lg font-semibold text-black/80">
+                      <Icon size={26} className="shrink-0 text-galactic-red" /> {item}
                     </div>
                   );
                 })}
+                </div>
               </div>
             </div>
-            <div className="rounded-[30px] bg-galactic-black p-6 text-white">
+            <div>
               <h2 className="text-3xl font-black">Services</h2>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-5 rounded-[28px] border border-black/15 bg-white p-5 md:p-6">
+                <div className="grid gap-4 sm:grid-cols-2">
                 {propertyServices.map((item, index) => {
                   const Icon = serviceIcons[index] ?? ShieldCheck;
                   return (
-                    <div key={item} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-3 text-sm font-bold text-white/78">
-                      <Icon size={18} className="text-galactic-red" /> {item}
+                    <div key={item} className="flex min-h-[64px] items-center gap-4 rounded-2xl border border-black/20 bg-white px-5 py-4 text-lg font-semibold text-black/80">
+                      <Icon size={26} className="shrink-0 text-galactic-red" /> {item}
                     </div>
                   );
                 })}
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="rounded-[30px] bg-galactic-black p-6 text-white">
-            <ShieldCheck className="text-galactic-red" size={28} />
-            <h2 className="mt-4 text-3xl font-black">Food, facilities, and nearby places</h2>
-            <p className="mt-3 text-white/62">Chef-led meals, laundry, biometric entry, CCTV coverage, study lounges, and easy commute access.</p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {property.nearby.map((place) => (
-                <span key={place} className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold">{place}</span>
-              ))}
+            <div className="rounded-[28px] border border-black/15 bg-white p-6">
+              <div className="flex items-center gap-5">
+                <Bolt size={42} className="shrink-0 text-galactic-red" />
+                <p className="text-xl font-semibold leading-8 text-black/78">
+                  Electricity charges will be applied separately based on individual usage.
+                </p>
+              </div>
             </div>
           </div>
         </div>

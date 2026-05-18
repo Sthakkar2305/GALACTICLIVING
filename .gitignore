@@ -7,5 +7,6 @@ npm-debug.log*
 .next-local/
 .next-run/
 .next-runtime/
+.next-galactic/
 out/
 build/

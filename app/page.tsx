@@ -22,9 +22,9 @@ export default function HomePage() {
         <div className="container-lux relative z-10 grid min-h-[calc(88svh-96px)] content-center py-16">
           <FadeUp>
             <div className="max-w-4xl">
-              <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold backdrop-blur">
+              {/* <div className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold backdrop-blur">
                 Premium PG homes in Ahmedabad
-              </div>
+              </div> */}
               <h1 className="font-display text-5xl font-black leading-[0.98] tracking-tight md:text-7xl lg:text-8xl">
                 Move into a smarter kind of hostel life.
               </h1>
@@ -32,9 +32,9 @@ export default function HomePage() {
                 Fully managed luxury PG living with chef-led meals, hotel-grade housekeeping, smart security, fast WiFi, and rooms built for real student and professional life.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/properties" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/24 bg-white/10 px-7 py-4 font-bold backdrop-blur transition hover:bg-white hover:text-black">
+                {/* <Link href="/properties" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/24 bg-white/10 px-7 py-4 font-bold backdrop-blur transition hover:bg-white hover:text-black">
                   Explore Rooms <ChevronRight size={18} />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </FadeUp>
@@ -45,7 +45,7 @@ export default function HomePage() {
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <FadeUp>
             <p className="text-sm font-black uppercase tracking-[0.22em] text-galactic-red">Featured homes</p>
-            <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight md:text-5xl">Premium properties designed for everyday ease.</h2>
+            {/* <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight md:text-5xl">Premium properties designed for everyday ease.</h2> */}
           </FadeUp>
           <Link href="/properties" className="inline-flex items-center gap-2 font-bold text-galactic-red">
             View all properties <ArrowRight size={18} />
