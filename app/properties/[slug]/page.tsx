@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AirVent, Archive, Bath, BedDouble, Bolt, ChefHat, FileText, MapPin, Refrigerator, ShieldCheck, Sparkles, Star, Tv, WashingMachine, Wifi } from "lucide-react";
+import { AirVent, Archive, Bath, BedDouble, Bolt, ChefHat, ChevronRight, FileText, MapPin, Refrigerator, ShieldCheck, Sparkles, Star, Tv, WashingMachine, Wifi } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 import { properties, propertyAmenities, propertyServices } from "@/lib/data";
 
@@ -73,18 +73,6 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
             <p className="mt-4 text-lg leading-8 text-black/58">{property.description}</p>
           </div>
 
-          {property.mapEmbedUrl && (
-            <div className="overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
-              <iframe
-                src={property.mapEmbedUrl}
-                title={`${property.name} map`}
-                className="h-[260px] w-full border-0 md:h-[360px]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          )}
-
           <div id="occupancy" className="scroll-mt-28 overflow-hidden rounded-[30px] border border-black/8 bg-white shadow-luxury">
             <div className="border-b border-black/8 bg-galactic-mist/70 px-5 pt-5">
               <div className="grid grid-cols-3 text-center text-sm font-black text-black/54">
@@ -148,9 +136,6 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
                   );
                 })}
                 </div>
-                <a href="/house-rules" className="mt-4 inline-flex items-center gap-2 rounded-full bg-galactic-red px-5 py-3 text-sm font-bold text-white transition hover:bg-black">
-                  <FileText size={17} /> House Rules
-                </a>
               </div>
             </div>
             <div className="rounded-[28px] border border-black/15 bg-white p-6">
@@ -161,6 +146,29 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
                 </p>
               </div>
             </div>
+            <a href="/house-rules" className="group rounded-[28px] border border-black/15 bg-white p-6 transition hover:border-galactic-red hover:shadow-redglow">
+              <div className="flex items-center justify-between gap-5">
+                <div className="flex items-center gap-5">
+                  <FileText size={38} className="shrink-0 text-galactic-red" />
+                  <div>
+                    <h3 className="text-xl font-black text-black">Policies & House Rules</h3>
+                    <p className="mt-1 text-sm leading-6 text-black/55">Read resident policies, penalties, visitor rules, safety rules, and service guidelines.</p>
+                  </div>
+                </div>
+                <ChevronRight className="shrink-0 text-galactic-red transition group-hover:translate-x-1" size={24} />
+              </div>
+            </a>
+            {property.mapEmbedUrl && (
+              <div className="overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
+                <iframe
+                  src={property.mapEmbedUrl}
+                  title={`${property.name} map`}
+                  className="h-[260px] w-full border-0 md:h-[360px]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            )}
           </div>
         </div>
         <aside id="booking" className="h-max rounded-[30px] border border-black/8 bg-white p-5 shadow-luxury lg:sticky lg:top-24">
