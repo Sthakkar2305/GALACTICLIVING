@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, Building2, Camera, ChevronRight, ShieldCheck, Sparkles, Utensils, WashingMachine, Wifi } from "lucide-react";
+import { ArrowRight, ArrowRightCircle, Camera, ChevronRight } from "lucide-react";
 import { FadeUp, PageTransition } from "@/components/ui/Motion";
 import { PropertyCard } from "@/components/PropertyCard";
-import { amenities, properties } from "@/lib/data";
-
-const iconMap = [Wifi, Utensils, WashingMachine, ShieldCheck, Sparkles, Building2];
+import { properties } from "@/lib/data";
 
 export default function HomePage() {
   return (
@@ -60,31 +58,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-lux py-20">
-        <div className="rounded-[36px] bg-galactic-black p-6 text-white md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <FadeUp>
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-galactic-red">Why choose us</p>
-              <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Managed living that feels quietly expensive.</h2>
-              <p className="mt-5 text-white/62">Every detail is engineered around safety, comfort, community, and predictable service.</p>
-            </FadeUp>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {amenities.slice(0, 6).map((item, index) => {
-                const Icon = iconMap[index] ?? BadgeCheck;
-                return (
-                  <FadeUp key={item} delay={index * 0.05}>
-                    <div className="rounded-[24px] border border-white/10 bg-white/[0.06] p-5">
-                      <Icon className="text-galactic-red" size={24} />
-                      <h3 className="mt-4 font-bold">{item}</h3>
-                    </div>
-                  </FadeUp>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-galactic-mist py-20">
         <div className="container-lux grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <FadeUp>
@@ -103,68 +76,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-lux py-20">
-        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+      <section className="bg-white py-20">
+        <div className="container-lux max-w-4xl">
           <FadeUp>
-            <div className="sticky top-28 rounded-[36px] bg-galactic-black p-7 text-white shadow-luxury md:p-9">
+            <article className="prose prose-lg max-w-none">
               <p className="text-sm font-black uppercase tracking-[0.22em] text-galactic-red">Best PG in Ahmedabad</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">What you need to know before choosing a PG.</h2>
-              <p className="mt-5 text-white/64">
+              <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-black md:text-5xl">What you need to know before choosing a PG.</h2>
+              <p className="mt-6 text-lg leading-8 text-black/72">
                 Ahmedabad has become a popular city for students and working professionals. Finding a PG is easy, but finding a good one needs a closer look at real daily comfort, not just photos or rent.
               </p>
-              <div className="mt-7 rounded-[26px] border border-white/10 bg-white/[0.06] p-5">
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/46">Final thought</p>
-                <p className="mt-3 text-white/76">
-                  A good PG should make your life simpler. If you constantly deal with food, cleaning, or security problems, it is not worth it, no matter how cheap or fancy it looks.
-                </p>
-              </div>
-            </div>
-          </FadeUp>
 
-          <div className="grid gap-5">
-            <FadeUp>
-              <div className="rounded-[30px] border border-black/8 bg-white p-6 shadow-[0_18px_60px_rgba(0,0,0,0.07)] md:p-7">
-                <h3 className="text-2xl font-black">Why Galactic Living is different</h3>
-                <p className="mt-3 leading-7 text-black/58">
-                  Most PGs just give you a room and leave the rest to you. Galactic Living makes the whole experience easier, cleaner, safer, and more structured than typical inconsistent PG setups.
-                </p>
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {["24/7 security with CCTV and controlled access", "Clean spaces with regular housekeeping", "Daily meals that are simple and consistent", "Reliable Wi-Fi for work or study", "Common areas to relax or hang out"].map((item) => (
-                    <div key={item} className="rounded-2xl bg-galactic-mist p-4 text-sm font-bold text-black/74">
-                      {item}
-                    </div>
-                  ))}
-                </div>
+              <h3 className="mt-12 text-3xl font-black tracking-tight text-black">Why Galactic Living is different</h3>
+              <p className="mt-4 text-lg leading-8 text-black/72">
+                Most PGs just give you a room and leave the rest to you. Galactic Living makes the whole experience easier, cleaner, safer, and more structured than typical inconsistent PG setups.
+              </p>
+              <div className="mt-5 grid gap-4">
+                {["24/7 security with CCTV and controlled access", "Clean spaces with regular housekeeping", "Daily meals that are simple and consistent", "Reliable Wi-Fi for work or study", "Common areas to relax or hang out"].map((item) => (
+                  <div key={item} className="flex gap-4 text-lg leading-8 text-black/78">
+                    <ArrowRightCircle className="mt-1 shrink-0 text-galactic-red" size={22} />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-            </FadeUp>
-            <div className="grid gap-5 md:grid-cols-2">
-              <FadeUp>
-                <div className="h-full rounded-[30px] bg-galactic-mist p-6 md:p-7">
-                  <h3 className="text-2xl font-black">What to check before choosing</h3>
-                  <div className="mt-5 grid gap-3">
-                    {["What is included in the cost: food, Wi-Fi, cleaning", "Furniture, ventilation, and everyday comfort", "Food quality and hygiene", "Security measures", "Distance from college or workplace"].map((item) => (
-                      <div key={item} className="flex gap-3 rounded-2xl bg-white p-4 text-sm font-bold text-black/72">
-                        <span className="mt-1 size-2 shrink-0 rounded-full bg-galactic-red" />
-                        {item}
-                      </div>
-                    ))}
+
+              <h3 className="mt-12 text-3xl font-black tracking-tight text-black">What to check before choosing</h3>
+              <div className="mt-5 grid gap-4">
+                {["What is included in the cost: food, Wi-Fi, cleaning", "Furniture, ventilation, and everyday comfort", "Food quality and hygiene", "Security measures", "Distance from college or workplace"].map((item) => (
+                  <div key={item} className="flex gap-4 text-lg leading-8 text-black/78">
+                    <ArrowRightCircle className="mt-1 shrink-0 text-galactic-red" size={22} />
+                    <span>{item}</span>
                   </div>
-                </div>
-              </FadeUp>
-              <FadeUp delay={0.08}>
-                <div className="h-full rounded-[30px] bg-[linear-gradient(135deg,#111,#2a0205)] p-6 text-white md:p-7">
-                  <h3 className="text-2xl font-black">What you typically get</h3>
-                  <div className="mt-5 grid gap-3">
-                    {["Furnished rooms with AC and attached washrooms", "Meals and clean drinking water", "Wi-Fi and power backup", "Housekeeping and laundry", "Security systems", "Lounges and activity areas"].map((item) => (
-                      <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 text-sm font-bold text-white/78">
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </FadeUp>
-            </div>
-          </div>
+                ))}
+              </div>
+
+              <h3 className="mt-12 text-3xl font-black tracking-tight text-black">What you typically get</h3>
+              <p className="mt-4 text-lg leading-8 text-black/72">
+                Furnished rooms with AC and attached washrooms, meals and clean drinking water, Wi-Fi and power backup, housekeeping and laundry, security systems, lounges, and activity areas.
+              </p>
+              <p className="mt-8 text-lg leading-8 text-black/72">
+                A good PG should make your life simpler. If you constantly deal with food, cleaning, or security problems, it is not worth it, no matter how cheap or fancy it looks.
+              </p>
+            </article>
+          </FadeUp>
         </div>
       </section>
     </PageTransition>

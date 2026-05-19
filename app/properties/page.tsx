@@ -19,13 +19,6 @@ export default function PropertiesPage() {
         </div>
       </section>
       <section className="container-lux py-14">
-        <div className="mb-8 grid gap-3 rounded-[28px] bg-galactic-mist p-4 md:grid-cols-4">
-          {["Location", "Gender", "Occupancy", "Budget"].map((item) => (
-            <select key={item} className="h-[52px] rounded-2xl border border-black/8 bg-white px-4 text-sm font-bold outline-none">
-              <option>{item}</option>
-            </select>
-          ))}
-        </div>
         <div className="grid gap-6 lg:grid-cols-3">
           {properties.map((property, index) => (
             <FadeUp key={property.id} delay={index * 0.06}>

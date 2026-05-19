@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AirVent, Archive, Bath, BedDouble, Bolt, ChefHat, MapPin, ShieldCheck, Sparkles, Star, WashingMachine, Wifi } from "lucide-react";
+import { AirVent, Archive, Bath, BedDouble, Bolt, ChefHat, FileText, MapPin, Refrigerator, ShieldCheck, Sparkles, Star, Tv, WashingMachine, Wifi } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 import { properties, propertyAmenities, propertyServices } from "@/lib/data";
 
@@ -28,8 +28,8 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
   const property = properties.find((item) => item.id === slug);
   if (!property) notFound();
 
-  const amenityIcons = [AirVent, Bath, Archive];
-  const serviceIcons = [ChefHat, Wifi, WashingMachine, Sparkles, ShieldCheck];
+  const amenityIcons = [Archive, AirVent, Bath, Archive];
+  const serviceIcons = [ChefHat, Wifi, WashingMachine, Sparkles, Refrigerator, WashingMachine, ShieldCheck, Sparkles, Tv];
   const sliderImages = Array.from({ length: 3 }, (_, index) => property.gallery[index % property.gallery.length]);
 
   return (
@@ -73,6 +73,18 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
             <p className="mt-4 text-lg leading-8 text-black/58">{property.description}</p>
           </div>
 
+          {property.mapEmbedUrl && (
+            <div className="overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
+              <iframe
+                src={property.mapEmbedUrl}
+                title={`${property.name} map`}
+                className="h-[260px] w-full border-0 md:h-[360px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          )}
+
           <div id="occupancy" className="scroll-mt-28 overflow-hidden rounded-[30px] border border-black/8 bg-white shadow-luxury">
             <div className="border-b border-black/8 bg-galactic-mist/70 px-5 pt-5">
               <div className="grid grid-cols-3 text-center text-sm font-black text-black/54">
@@ -99,7 +111,7 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
                       <span className="text-xs font-black">{room.beds}</span>
                     </div>
                     <h3 className="mt-2 text-[11px] font-black uppercase leading-tight tracking-tight sm:text-xs">{room.name.replace(/^\dX\s/, "")}</h3>
-                    {/* <p className="mt-1.5 min-h-[32px] text-[10px] leading-4 text-black/52 sm:min-h-[36px] sm:text-xs">{room.features.slice(0, 2).join(" / ")}</p> */}
+                    {/* <p className="mt-1.5 min-h-[32px] text-[10px] leading-4 text-black/52 sm:min-h-[36px] sm:text-xs">{room.features.join(" / ")}</p> */}
                     <p className="mt-2 text-sm font-black text-galactic-red sm:text-base">Rs. {room.price.toLocaleString("en-IN")}<span className="text-[10px] text-black/42">/mo*</span></p>
                   </div>
                 ))}
@@ -110,13 +122,13 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
           <div id="amenities" className="scroll-mt-28 grid gap-8">
             <div>
               <h2 className="text-3xl font-black">Amenities</h2>
-              <div className="mt-5 rounded-[28px] border border-black/15 bg-white p-5 md:p-6">
-                <div className="grid gap-4 sm:grid-cols-2">
+              <div className="mt-5 rounded-[22px] border border-black/15 bg-white p-3 md:p-6">
+                <div className="grid grid-cols-2 gap-2 md:gap-4">
                 {propertyAmenities.map((item, index) => {
                   const Icon = amenityIcons[index] ?? Sparkles;
                   return (
-                    <div key={item} className="flex min-h-[64px] items-center gap-4 rounded-2xl border border-black/20 bg-white px-5 py-4 text-lg font-semibold text-black/80">
-                      <Icon size={26} className="shrink-0 text-galactic-red" /> {item}
+                    <div key={item} className="flex min-h-[44px] items-center gap-2 rounded-full border border-black/20 bg-white px-3 py-2 text-xs font-semibold text-black/80 sm:text-sm md:min-h-[64px] md:gap-4 md:rounded-2xl md:px-5 md:py-4 md:text-lg">
+                      <Icon size={18} className="shrink-0 text-galactic-red md:size-[26px]" /> {item}
                     </div>
                   );
                 })}
@@ -125,17 +137,20 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
             </div>
             <div>
               <h2 className="text-3xl font-black">Services</h2>
-              <div className="mt-5 rounded-[28px] border border-black/15 bg-white p-5 md:p-6">
-                <div className="grid gap-4 sm:grid-cols-2">
+              <div className="mt-5 rounded-[22px] border border-black/15 bg-white p-3 md:p-6">
+                <div className="grid grid-cols-2 gap-2 md:gap-4">
                 {propertyServices.map((item, index) => {
                   const Icon = serviceIcons[index] ?? ShieldCheck;
                   return (
-                    <div key={item} className="flex min-h-[64px] items-center gap-4 rounded-2xl border border-black/20 bg-white px-5 py-4 text-lg font-semibold text-black/80">
-                      <Icon size={26} className="shrink-0 text-galactic-red" /> {item}
+                    <div key={item} className="flex min-h-[44px] items-center gap-2 rounded-full border border-black/20 bg-white px-3 py-2 text-xs font-semibold text-black/80 sm:text-sm md:min-h-[64px] md:gap-4 md:rounded-2xl md:px-5 md:py-4 md:text-lg">
+                      <Icon size={18} className="shrink-0 text-galactic-red md:size-[26px]" /> {item}
                     </div>
                   );
                 })}
                 </div>
+                <a href="/house-rules" className="mt-4 inline-flex items-center gap-2 rounded-full bg-galactic-red px-5 py-3 text-sm font-bold text-white transition hover:bg-black">
+                  <FileText size={17} /> House Rules
+                </a>
               </div>
             </div>
             <div className="rounded-[28px] border border-black/15 bg-white p-6">

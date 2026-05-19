@@ -21,10 +21,10 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white shadow-sm">
       <div className="container-lux flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3" aria-label="Galactic Living home">
+        <Link href="/" className="flex items-center gap-0.5" aria-label="Galactic Living home">
           <Image src="/brand/uploaded-logo.png" width={44} height={44} alt="Galactic Living" priority className="size-11 object-contain" />
-          <span className="leading-none">
-            <span className="block text-lg font-black tracking-tight text-black">GALACTIC</span>
+          <span className="-ml-1 leading-none">
+            <span className="block text-lg font-black tracking-tight text-galactic-red">GALACTIC</span>
             <span className="block text-sm font-black tracking-tight text-galactic-red">LIVING</span>
           </span>
         </Link>

@@ -31,12 +31,13 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    ".next-galactic/types/**/*.ts",
     ".next-local/types/**/*.ts",
     ".next-run/types/**/*.ts",
     ".next-runtime/types/**/*.ts",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    ".next-galactic/types/**/*.ts"
+    ".next-final/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

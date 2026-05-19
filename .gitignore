@@ -8,5 +8,6 @@ npm-debug.log*
 .next-run/
 .next-runtime/
 .next-galactic/
+.next-final/
 out/
 build/

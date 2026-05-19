@@ -16,32 +16,42 @@ export const contact = {
 };
 
 export const occupancyPricing = [
-  { name: "2X Double Occupancy", beds: "x 2", price: 22700 },
-  { name: "3X Triple Occupancy", beds: "x 3", price: 16700 },
-  { name: "4X Quadruple Occupancy", beds: "x 4", price: 14700 },
-  { name: "5X Quintuple Occupancy", beds: "x 5", price: 12700 }
+  { name: "2X Double Occupancy", beds: "x 2", price: 22700,  },
+  { name: "3X Triple Occupancy", beds: "x 3", price: 16700,  },
+  { name: "4X Quadruple Occupancy", beds: "x 4", price: 14700,  },
+  { name: "5X Quintuple Occupancy", beds: "x 5", price: 12700,  }
 ];
 
-export const propertyAmenities = ["Air Conditioning", "Attached Washroom", "Spacious Cupboard"];
+export const propertyAmenities = ["Attached Balcony", "Air Conditioning", "Attached Washroom", "Spacious Cupboard"];
 
 export const propertyServices = [
   "Hot & Delicious Meals",
   "High Speed WIFI",
   "Laundry Service",
   "Professional Housekeeping",
-  "24*7 Security Surveillance"
+  "Spacious Refrigerator",
+  "Washing Machine",
+  "24x7 Security Surveillance",
+  "Water Purifier",
+  "Flat Screen Television"
 ];
 
 export const properties = [
   {
     id: "galactic-alpha",
-    name: "Galactic Alpha House",
+    name: "Mars by Galactic",
     location: "Navrangpura, Ahmedabad",
     city: "Ahmedabad",
     type: "Premium PG",
-    gender: "Unisex",
+    gender: "Male",
     price: 12700,
     rating: 4.9,
+    status: "live",
+    badge: "Preferred by students",
+    mapUrl:
+      "https://www.google.com/maps/place/ORCHID+PG/@23.0280222,72.547853,1526m/data=!3m1!1e3!4m22!1m15!4m14!1m6!1m2!1s0x395e8580a9d3fb43:0x7298739e92289c8d!2sORCHID+PG,+2ND+FLOOR,+Sapphire+Complex,+Chimanlal+Girdharlal+Rd,+nr.+Yes+Bank,+Navrangpura,+Ahmedabad,+Gujarat+380009!2m2!1d72.5573833!2d23.028025!1m6!1m2!1s0x395e848aba5bd449:0x4fcedd11614f6516!2sAhmedabad,+Gujarat!2m2!1d72.5713621!2d23.022505!3m5!1s0x395e8580a9d3fb43:0x7298739e92289c8d!8m2!3d23.028025!4d72.5573833!16s%2Fg%2F11nhgy58ny?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=ORCHID%20PG%2C%202ND%20FLOOR%2C%20Sapphire%20Complex%2C%20Chimanlal%20Girdharlal%20Rd%2C%20Navrangpura%2C%20Ahmedabad%2C%20Gujarat%20380009&output=embed",
     occupancy: ["2X Double", "3X Triple", "4X Quad", "5X Quint"],
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
     gallery: [
@@ -56,13 +66,16 @@ export const properties = [
   },
   {
     id: "galactic-orion",
-    name: "Galactic Orion House",
-    location: "Gota, Ahmedabad",
+    name: "Venus by Galactic",
+    location: "Coming soon",
     city: "Ahmedabad",
     type: "Student Living",
     gender: "Male",
     price: 12700,
     rating: 4.8,
+    status: "coming-soon",
+    mapUrl: "",
+    mapEmbedUrl: "",
     occupancy: ["2X Double", "3X Triple", "4X Quad", "5X Quint"],
     image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=85",
     gallery: [
@@ -75,13 +88,16 @@ export const properties = [
   },
   {
     id: "galactic-nova",
-    name: "Galactic Nova Residence",
-    location: "Vastrapur, Ahmedabad",
+    name: "Jupiter by Galactic",
+    location: "Coming soon",
     city: "Ahmedabad",
     type: "Working Pro",
     gender: "Female",
     price: 12700,
     rating: 4.9,
+    status: "coming-soon",
+    mapUrl: "",
+    mapEmbedUrl: "",
     occupancy: ["2X Double", "3X Triple", "4X Quad", "5X Quint"],
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
     gallery: [
