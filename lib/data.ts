@@ -66,7 +66,7 @@ export const properties = [
   },
   {
     id: "galactic-orion",
-    name: "Venus by Galactic",
+    name: "Pegasus by Galactic",
     location: "Coming soon",
     city: "Ahmedabad",
     type: "Student Living",
@@ -88,7 +88,7 @@ export const properties = [
   },
   {
     id: "galactic-nova",
-    name: "Jupiter by Galactic",
+    name: "Bellatrix by Galactic",
     location: "Coming soon",
     city: "Ahmedabad",
     type: "Working Pro",

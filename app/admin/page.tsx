@@ -1,7 +1,8 @@
-import { BarChart3, BedDouble, Camera, MessageSquare, Plus, Upload } from "lucide-react";
+import { BarChart3, BedDouble, Camera, MessageSquare, Plus } from "lucide-react";
 import { getAdminSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { galleryItems, properties, testimonials } from "@/lib/data";
+import { GalleryManager } from "@/components/admin/GalleryManager";
 
 export default async function AdminDashboardPage() {
   const session = await getAdminSession();
@@ -46,8 +47,8 @@ export default async function AdminDashboardPage() {
               </div>
             ))}
           </div>
-          <div className="mt-8 grid gap-5 xl:grid-cols-[1fr_0.85fr]">
-            <div className="rounded-[30px] border border-white/10 bg-white/[0.06] p-5">
+          <div className="mt-8 grid gap-5 xl:grid-cols-[1fr_1.2fr]">
+            <div className="rounded-[30px] border border-white/10 bg-white/[0.06] p-5 h-max">
               <h2 className="text-2xl font-black">Manage properties</h2>
               <div className="mt-5 grid gap-3">
                 {properties.map((property) => (
@@ -64,15 +65,8 @@ export default async function AdminDashboardPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-[30px] border border-dashed border-white/20 bg-white/[0.04] p-5">
-              <div className="grid min-h-[260px] place-items-center rounded-[24px] border border-dashed border-galactic-red/50 bg-black/30 p-6 text-center">
-                <div>
-                  <Upload className="mx-auto text-galactic-red" size={34} />
-                  <h2 className="mt-4 text-2xl font-black">Drag & drop gallery upload</h2>
-                  <p className="mt-2 text-white/50">Upload images, add title, category, price, description, and sort order. API endpoints are ready for Cloudinary + MongoDB.</p>
-                  <button className="mt-5 rounded-full bg-white px-5 py-3 font-bold text-black">Choose Images</button>
-                </div>
-              </div>
+            <div>
+              <GalleryManager initialItems={galleryItems} />
             </div>
           </div>
         </section>

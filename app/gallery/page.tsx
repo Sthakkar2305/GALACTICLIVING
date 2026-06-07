@@ -11,14 +11,14 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <PageTransition>
-      <section className="bg-galactic-black pb-16 pt-32 text-white">
+      {/* <section className="bg-galactic-black pb-16 pt-32 text-white">
         <div className="container-lux">
           <p className="text-sm font-black uppercase tracking-[0.22em] text-galactic-red">Dynamic gallery</p>
           <h1 className="mt-4 max-w-3xl text-5xl font-black tracking-tight md:text-7xl">Rooms, lounges, meals, and the details that matter.</h1>
           <p className="mt-5 max-w-2xl text-white/62">Masonry layout, category filters, lazy-loaded images, hover zoom, and lightbox preview.</p>
         </div>
-      </section>
-      <section className="container-lux py-14">
+      </section> */}
+      <section className="container-lux py-14 m-16">
         <GalleryGrid items={galleryItems} />
       </section>
     </PageTransition>

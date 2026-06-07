@@ -29,9 +29,9 @@ export default function AdminLoginPage() {
           <Lock />
         </div>
         <h1 className="mt-6 text-4xl font-black">Admin login</h1>
-        <p className="mt-2 text-white/56">Default demo password is admin12345 until ADMIN_PASSWORD_HASH is configured.</p>
+        <p className="mt-2 text-white/56">Default demo password is admin@123 until ADMIN_PASSWORD_HASH is configured.</p>
         <div className="mt-7 grid gap-3">
-          <input name="email" type="email" defaultValue="admin@galacticliving.com" className="h-[52px] rounded-2xl border border-white/10 bg-white/10 px-4 outline-none focus:border-galactic-red" />
+          <input name="email" type="email" defaultValue="admin@gmail.com" className="h-[52px] rounded-2xl border border-white/10 bg-white/10 px-4 outline-none focus:border-galactic-red" />
           <input name="password" type="password" placeholder="Password" className="h-[52px] rounded-2xl border border-white/10 bg-white/10 px-4 outline-none focus:border-galactic-red" />
           {error && <p className="text-sm font-bold text-galactic-red">{error}</p>}
           <button className="h-[52px] rounded-2xl bg-galactic-red font-bold transition hover:bg-white hover:text-black">Enter Dashboard</button>

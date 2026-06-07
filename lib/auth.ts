@@ -5,10 +5,10 @@ import { cookies } from "next/headers";
 const cookieName = "galactic_admin";
 
 export async function verifyAdmin(email: string, password: string) {
-  const adminEmail = process.env.ADMIN_EMAIL ?? "admin@galacticliving.com";
+  const adminEmail = process.env.ADMIN_EMAIL ?? "admin@gmail.com";
   const hash = process.env.ADMIN_PASSWORD_HASH;
   if (email !== adminEmail) return false;
-  if (!hash) return password === "admin12345";
+  if (!hash) return password === "admin@123";
   return bcrypt.compare(password, hash);
 }
 

@@ -26,10 +26,6 @@ export default function ContactPage() {
             <a href={`mailto:${contact.email}`} className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold"><Mail className="text-galactic-red" /> {contact.email}</a>
             <div className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold"><MapPin className="text-galactic-red" /> Ahmedabad, Gujarat</div>
           </div>
-          <div className="mt-6 aspect-[16/10] rounded-[24px] bg-[linear-gradient(135deg,#111,#E50914)] p-6 text-white">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/65">Location map</p>
-            <p className="mt-3 text-2xl font-black">Interactive Google Maps embed placeholder</p>
-          </div>
         </div>
         <div className="rounded-[32px] border border-black/8 bg-white p-6 shadow-luxury md:p-8">
           <h2 className="text-3xl font-black">Request a callback</h2>

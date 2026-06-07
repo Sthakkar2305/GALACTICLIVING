@@ -54,7 +54,7 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
       <section className="container-lux py-8">
         <div className="flex snap-x gap-4 overflow-x-auto pb-3 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
           {sliderImages.map((image, index) => (
-            <div key={`${image}-${index}`} className="relative aspect-[4/3] min-w-[82%] snap-center overflow-hidden rounded-[26px] shadow-luxury sm:min-w-[54%] md:min-w-0">
+            <div key={`${image}-${index}`} className="relative aspect-[4/3] min-w-[96%] snap-center overflow-hidden rounded-md shadow-luxury sm:min-w-[80%] md:min-w-0">
               <Image src={image} alt={`${property.name} gallery ${index + 1}`} fill className="object-cover" priority={index === 0} />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-4">
                 <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-black text-galactic-red">
@@ -138,24 +138,24 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
                 </div>
               </div>
             </div>
-            <div className="rounded-[28px] border border-black/15 bg-white p-6">
-              <div className="flex items-center gap-5">
-                <Bolt size={42} className="shrink-0 text-galactic-red" />
-                <p className="text-xl font-semibold leading-8 text-black/78">
+            <div className="rounded-2xl border border-black/15 bg-white p-4 sm:p-5">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <Bolt size={24} className="shrink-0 text-galactic-red sm:size-7" />
+                <p className="text-sm font-semibold leading-normal text-black/78 sm:text-base">
                   Electricity charges will be applied separately based on individual usage.
                 </p>
               </div>
             </div>
-            <a href="/house-rules" className="group rounded-[28px] border border-black/15 bg-white p-6 transition hover:border-galactic-red hover:shadow-redglow">
-              <div className="flex items-center justify-between gap-5">
-                <div className="flex items-center gap-5">
-                  <FileText size={38} className="shrink-0 text-galactic-red" />
+            <a href="/house-rules" className="group rounded-2xl border border-black/15 bg-white p-4 sm:p-5 transition hover:border-galactic-red hover:shadow-redglow">
+              <div className="flex items-center justify-between gap-3 sm:gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <FileText size={24} className="shrink-0 text-galactic-red sm:size-7" />
                   <div>
-                    <h3 className="text-xl font-black text-black">Policies & House Rules</h3>
-                    <p className="mt-1 text-sm leading-6 text-black/55">Read resident policies, penalties, visitor rules, safety rules, and service guidelines.</p>
+                    <h3 className="text-sm font-black text-black sm:text-base">Policies & House Rules</h3>
+                    <p className="mt-0.5 text-xs leading-normal text-black/55 sm:text-sm">Read resident policies, penalties, visitor rules, safety rules, and service guidelines.</p>
                   </div>
                 </div>
-                <ChevronRight className="shrink-0 text-galactic-red transition group-hover:translate-x-1" size={24} />
+                <ChevronRight className="shrink-0 text-galactic-red transition group-hover:translate-x-1 sm:size-5" size={18} />
               </div>
             </a>
             {property.mapEmbedUrl && (

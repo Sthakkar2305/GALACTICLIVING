@@ -21,11 +21,11 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white shadow-sm">
       <div className="container-lux flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-0.5" aria-label="Galactic Living home">
-          <Image src="/brand/uploaded-logo.png" width={44} height={44} alt="Galactic Living" priority className="size-11 object-contain" />
-          <span className="-ml-1 leading-none">
-            <span className="block text-lg font-black tracking-tight text-galactic-red">GALACTIC</span>
-            <span className="block text-sm font-black tracking-tight text-galactic-red">LIVING</span>
+        <Link href="/" className="flex items-center gap-1.5" aria-label="Galactic Living home">
+          <Image src="/brand/uploaded-logo.png" width={56} height={56} alt="Galactic Living" priority className="h-14 w-14 md:h-12 md:w-12 object-contain" />
+          <span className="-ml-1.5 leading-none">
+            <span className="block text-2xl md:text-xl font-black tracking-tight text-black">GALACTIC</span>
+            <span className="block text-base md:text-sm font-black tracking-tight text-galactic-red">LIVING</span>
           </span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-black/70 lg:flex">
@@ -44,7 +44,7 @@ export function Navbar() {
           </Link>
         </div>
         <button className="rounded-full border border-black/10 p-3 lg:hidden" onClick={() => setOpen((value) => !value)} aria-label="Toggle menu">
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
       {open && (
