@@ -20,12 +20,12 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white shadow-sm">
-      <div className="container-lux flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-1.5" aria-label="Galactic Living home">
-          <Image src="/brand/uploaded-logo.png" width={56} height={56} alt="Galactic Living" priority className="h-14 w-14 md:h-12 md:w-12 object-contain" />
-          <span className="-ml-1.5 leading-none">
-            <span className="block text-2xl md:text-xl font-black tracking-tight text-black">GALACTIC</span>
-            <span className="block text-base md:text-sm font-black tracking-tight text-galactic-red">LIVING</span>
+      <div className="container-lux flex h-16 items-center justify-between">
+        <Link href="/" className="flex items-center gap-0.5" aria-label="Galactic Living home">
+          <Image src="/brand/uploaded-logo.png" width={44} height={44} alt="Galactic Living" priority className="h-11 w-11 md:h-10 md:w-10 object-contain" />
+          <span className="flex flex-col justify-center -ml-2 md:-ml-1.5 -mb-2.5 h-11 md:h-10">
+            <span className="block text-[19px] md:text-[17px] font-black tracking-tight text-black leading-[0.9]">GALACTIC</span>
+            <span className="block text-[12px] md:text-[11px] font-black tracking-[0.08em] text-galactic-red leading-[0.9] mt-0.5">LIVING</span>
           </span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-black/70 lg:flex">
@@ -36,15 +36,15 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
-          <a href={`tel:+91${contact.phone}`} className="rounded-full border border-black/10 p-3 transition hover:border-galactic-red hover:text-galactic-red" aria-label="Call Galactic Living">
-            <Phone size={18} />
+          <a href={`tel:+91${contact.phone}`} className="rounded-full border border-black/10 p-2.5 transition hover:border-galactic-red hover:text-galactic-red" aria-label="Call Galactic Living">
+            <Phone size={16} />
           </a>
-          <Link href="/contact" className="rounded-full bg-galactic-red px-5 py-3 text-sm font-bold text-white shadow-redglow transition hover:-translate-y-0.5 hover:bg-black">
+          <Link href="/contact" className="rounded-full bg-galactic-red px-5 py-2 text-sm font-bold text-white shadow-redglow transition hover:-translate-y-0.5 hover:bg-black">
             Book Visit
           </Link>
         </div>
-        <button className="rounded-full border border-black/10 p-3 lg:hidden" onClick={() => setOpen((value) => !value)} aria-label="Toggle menu">
-          {open ? <X size={22} /> : <Menu size={22} />}
+        <button className="rounded-full border border-black/10 p-2.5 lg:hidden" onClick={() => setOpen((value) => !value)} aria-label="Toggle menu">
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
       {open && (

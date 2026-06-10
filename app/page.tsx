@@ -8,7 +8,7 @@ import { properties } from "@/lib/data";
 export default function HomePage() {
   return (
     <PageTransition>
-      <section className="relative min-h-[88svh] bg-galactic-black pt-24 text-white">
+      <section className="relative min-h-[88svh] bg-galactic-black pt-20 text-white">
         <Image
           src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90"
           alt="Luxury Galactic Living residence"

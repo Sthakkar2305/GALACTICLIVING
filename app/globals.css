@@ -65,3 +65,9 @@ body {
   break-inside: avoid;
   margin-bottom: 18px;
 }
+
+/* Custom premium global border-radius override to make everything very little rounded (almost no rounded) */
+.rounded,
+*[class*="rounded-"]:not([class*="rounded-full"]) {
+  border-radius: 4px !important;
+}

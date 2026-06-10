@@ -78,7 +78,7 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
               <div className="grid grid-cols-3 text-center text-sm font-black text-black/54">
                 <a href="#occupancy" className="border-b-2 border-galactic-red pb-4 text-galactic-red transition hover:text-black">Occupancy</a>
                 <a href="#amenities" className="pb-4 transition hover:text-galactic-red">Amenities</a>
-                <a href="#details" className="pb-4 transition hover:text-galactic-red">Details</a>
+                <a href="#services" className="pb-4 transition hover:text-galactic-red">Services</a>
               </div>
             </div>
             <div className="p-5 md:p-7">
@@ -107,57 +107,58 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
             </div>
           </div>
 
-          <div id="amenities" className="scroll-mt-28 grid gap-8">
-            <div>
-              <h2 className="text-3xl font-black">Amenities</h2>
-              <div className="mt-5 rounded-[22px] border border-black/15 bg-white p-3 md:p-6">
-                <div className="grid grid-cols-2 gap-2 md:gap-4">
-                {propertyAmenities.map((item, index) => {
-                  const Icon = amenityIcons[index] ?? Sparkles;
-                  return (
-                    <div key={item} className="flex min-h-[44px] items-center gap-2 rounded-full border border-black/20 bg-white px-3 py-2 text-xs font-semibold text-black/80 sm:text-sm md:min-h-[64px] md:gap-4 md:rounded-2xl md:px-5 md:py-4 md:text-lg">
-                      <Icon size={18} className="shrink-0 text-galactic-red md:size-[26px]" /> {item}
-                    </div>
-                  );
-                })}
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl font-black">Services</h2>
-              <div className="mt-5 rounded-[22px] border border-black/15 bg-white p-3 md:p-6">
-                <div className="grid grid-cols-2 gap-2 md:gap-4">
-                {propertyServices.map((item, index) => {
-                  const Icon = serviceIcons[index] ?? ShieldCheck;
-                  return (
-                    <div key={item} className="flex min-h-[44px] items-center gap-2 rounded-full border border-black/20 bg-white px-3 py-2 text-xs font-semibold text-black/80 sm:text-sm md:min-h-[64px] md:gap-4 md:rounded-2xl md:px-5 md:py-4 md:text-lg">
-                      <Icon size={18} className="shrink-0 text-galactic-red md:size-[26px]" /> {item}
-                    </div>
-                  );
-                })}
-                </div>
-              </div>
-            </div>
-            <div className="rounded-2xl border border-black/15 bg-white p-4 sm:p-5">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <Bolt size={24} className="shrink-0 text-galactic-red sm:size-7" />
-                <p className="text-sm font-semibold leading-normal text-black/78 sm:text-base">
-                  Electricity charges will be applied separately based on individual usage.
-                </p>
-              </div>
-            </div>
-            <a href="/house-rules" className="group rounded-2xl border border-black/15 bg-white p-4 sm:p-5 transition hover:border-galactic-red hover:shadow-redglow">
-              <div className="flex items-center justify-between gap-3 sm:gap-4">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <FileText size={24} className="shrink-0 text-galactic-red sm:size-7" />
-                  <div>
-                    <h3 className="text-sm font-black text-black sm:text-base">Policies & House Rules</h3>
-                    <p className="mt-0.5 text-xs leading-normal text-black/55 sm:text-sm">Read resident policies, penalties, visitor rules, safety rules, and service guidelines.</p>
+          <div id="amenities" className="scroll-mt-28">
+            <h2 className="text-3xl font-black">Amenities</h2>
+            <div className="mt-5 rounded-[22px] border border-black/15 bg-white p-3 md:p-6">
+              <div className="grid grid-cols-2 gap-2 md:gap-4">
+              {propertyAmenities.map((item, index) => {
+                const Icon = amenityIcons[index] ?? Sparkles;
+                return (
+                  <div key={item} className="flex min-h-[44px] items-center gap-2 rounded-md border border-black/20 bg-white px-3 py-2 text-xs font-semibold text-black/80 sm:text-sm md:min-h-[64px] md:gap-4 md:rounded-md md:px-5 md:py-4 md:text-lg">
+                    <Icon size={18} className="shrink-0 text-galactic-red md:size-[26px]" /> {item}
                   </div>
-                </div>
-                <ChevronRight className="shrink-0 text-galactic-red transition group-hover:translate-x-1 sm:size-5" size={18} />
+                );
+              })}
               </div>
-            </a>
+            </div>
+          </div>
+
+          <div id="services" className="scroll-mt-28">
+            <h2 className="text-3xl font-black">Services</h2>
+            <div className="mt-5 rounded-[22px] border border-black/15 bg-white p-3 md:p-6">
+              <div className="grid grid-cols-2 gap-2 md:gap-4">
+              {propertyServices.map((item, index) => {
+                const Icon = serviceIcons[index] ?? ShieldCheck;
+                return (
+                  <div key={item} className="flex min-h-[44px] items-center gap-2 rounded-md border border-black/20 bg-white px-3 py-2 text-xs font-semibold text-black/80 sm:text-sm md:min-h-[64px] md:gap-4 md:rounded-md md:px-5 md:py-4 md:text-lg">
+                    <Icon size={18} className="shrink-0 text-galactic-red md:size-[26px]" /> {item}
+                  </div>
+                );
+              })}
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-black/15 bg-white p-4 sm:p-5">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <Bolt size={24} className="shrink-0 text-galactic-red sm:size-7" />
+              <p className="text-sm font-semibold leading-normal text-black/78 sm:text-base">
+                Electricity charges will be applied separately based on individual usage.
+              </p>
+            </div>
+          </div>
+          <a href="/house-rules" className="group rounded-2xl border border-black/15 bg-white p-4 sm:p-5 transition hover:border-galactic-red hover:shadow-redglow">
+            <div className="flex items-center justify-between gap-3 sm:gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FileText size={24} className="shrink-0 text-galactic-red sm:size-7" />
+                <div>
+                  <h3 className="text-sm font-black text-black sm:text-base">Policies & House Rules</h3>
+                  <p className="mt-0.5 text-xs leading-normal text-black/55 sm:text-sm">Read resident policies, penalties, visitor rules, safety rules, and service guidelines.</p>
+                </div>
+              </div>
+              <ChevronRight className="shrink-0 text-galactic-red transition group-hover:translate-x-1 sm:size-5" size={18} />
+            </div>
+          </a>
             {property.mapEmbedUrl && (
               <div className="overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
                 <iframe
@@ -170,7 +171,6 @@ export default async function DynamicPropertyDetailsPage({ params }: Props) {
               </div>
             )}
           </div>
-        </div>
         <aside id="booking" className="h-max rounded-[30px] border border-black/8 bg-white p-5 shadow-luxury lg:sticky lg:top-24">
           <h2 className="text-2xl font-black">Book a visit</h2>
           <p className="mt-2 text-sm text-black/55">Get availability, deposit, and move-in details.</p>
