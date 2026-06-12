@@ -23,8 +23,8 @@ export function Navbar() {
       <div className="container-lux flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-0.5" aria-label="Galactic Living home">
           <Image src="/brand/uploaded-logo.png" width={44} height={44} alt="Galactic Living" priority className="h-11 w-11 md:h-10 md:w-10 object-contain" />
-          <span className="flex flex-col justify-center -ml-2 md:-ml-1.5 -mb-2.5 h-11 md:h-10">
-            <span className="block text-[19px] md:text-[17px] font-black tracking-tight text-black leading-[0.9]">GALACTIC</span>
+          <span className="flex flex-col justify-center md:-ml-1.5  h-[4.75rem] mb-[-0.325rem] md:h-10">
+            <span className="block text-[19px] md:text-[17px] font-black tracking-tight text-black leading-[1.1]">GALACTIC</span>
             <span className="block text-[12px] md:text-[11px] font-black tracking-[0.08em] text-galactic-red leading-[0.9] mt-0.5">LIVING</span>
           </span>
         </Link>
